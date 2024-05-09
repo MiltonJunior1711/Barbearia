@@ -162,6 +162,3 @@ if($total_reg > 0){
 
 	});
 </script>
-
-
-
