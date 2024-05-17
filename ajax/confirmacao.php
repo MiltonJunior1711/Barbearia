@@ -69,5 +69,4 @@ if ($response === false) {
         error_log("Nenhum JSON válido encontrado na resposta");
     }
 }
-
 ?>

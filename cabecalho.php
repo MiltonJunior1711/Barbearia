@@ -1,4 +1,7 @@
-<?php require_once("sistema/conexao.php") ?>
+<?php require_once("sistema/conexao.php");
+$css_file = "css/style.css";
+$css_version = filemtime($css_file);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +14,7 @@
   <!-- Site Metas -->
   <meta name="keywords" content="barbearia freitas, salão de beleza" />
   <meta name="description" content="Fazemos todo tipo de serviço ..." />
-  <meta name="author" content="Hugo Vasconcelos" />
+  <meta name="author" content="" />
   <link rel="shortcut icon" href="images/<?php echo $icone_site ?>" type="image/x-icon">
 
   <title><?php echo $nome_sistema ?></title>

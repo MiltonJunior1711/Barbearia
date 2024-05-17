@@ -1,7 +1,7 @@
 <?php 
 
-$banco = 'hgsys308_barbearia';
-$usuario = 'hgsys308_flavia';
+$banco = 'hgsys308_JessicaKarine';
+$usuario = 'hgsys308_milton';
 $senha = 'projetobarbearia';
 $servidor = 'localhost';
 

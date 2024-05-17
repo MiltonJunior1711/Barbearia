@@ -38,7 +38,7 @@ if($total_reg > 0){
         $id = $res[$i]['id'];
     	$pdo->query("DELETE FROM agendamentos WHERE id = '$id'");
 }
-
+}
 
 
  ?>

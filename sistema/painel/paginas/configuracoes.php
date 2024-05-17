@@ -159,7 +159,7 @@ if(@$configuracoes == 'ocultar'){
 						<div class="col-md-2">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Token Api</label>
-								<input type="text" class="form-control" id="token" name="token" placeholder="Token Api Whatsapp" value="<?php echo @$token ?>" readonly>   
+								<input type="text" class="form-control" id="token" name="token" placeholder="Token Api Whatsapp" value="<?php echo @$token ?>">   
 							</div> 
 						</div>
 
@@ -167,7 +167,7 @@ if(@$configuracoes == 'ocultar'){
 						<div class="col-md-2">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Instancia API</label>
-								<input type="text" class="form-control" id="instancia" name="instancia" placeholder="Instância Api Whatsapp" place value="<?php echo @$instancia ?>" readonly>   
+								<input type="text" class="form-control" id="instancia" name="instancia" placeholder="Instância Api Whatsapp" place value="<?php echo @$instancia ?>">   
 							</div> 
 						</div>
 

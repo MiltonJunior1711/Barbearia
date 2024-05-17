@@ -1,4 +1,7 @@
-<?php require_once("sistema/conexao.php") ?>
+<?php require_once("sistema/conexao.php");
+$css_file = "css/style.css";
+$css_version = filemtime($css_file);
+?>
 <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
