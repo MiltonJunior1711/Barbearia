@@ -10,7 +10,7 @@ $data_atual = date('Y-m-d');
 
 </div>
 
-<div class="footer_section" style="background: #5a8e94; ">
+<div class="footer_section" style="background: #dfddeb; ">
 	<div class="container" >
 		<div class="footer_content " >
 			<form id="form-agenda" method="post" style="margin-top: -25px !important">
