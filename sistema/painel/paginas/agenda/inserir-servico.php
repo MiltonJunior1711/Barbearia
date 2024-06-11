@@ -68,6 +68,8 @@ if($valor_taxa > 0 and strtotime($data_pgto) <=  strtotime($data_atual)){
 }
 
 
+
+
 $query = $pdo->query("SELECT * FROM formas_pgto where nome = '$pgto_restante'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $valor_taxa = @$res[0]['taxa'];

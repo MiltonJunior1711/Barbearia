@@ -1,24 +1,22 @@
 <?php require_once("cabecalho.php") ?>
 <style type="text/css">
-	.sub_page .hero_area {
-  min-height: auto;
+.sub_page .hero_area {
+    min-height: auto;
 }
 </style>
 
-</div>
 
 
 
 
-
-  <section class="product_section layout_padding">
+<section class="product_section layout_padding" style=  "background: #f0f0f2;">
     <div class="container-fluid">
-      <div class="heading_container heading_center ">
-        <h2 class="">
-          Nossos Serviços
-        </h2>
-        <p class="col-lg-8 px-0">
-          <?php 
+        <div class="heading_container heading_center ">
+            <h2 class="">
+                Nossos Serviços
+            </h2>
+            <p class="col-lg-8 px-0">
+                <?php 
           $query = $pdo->query("SELECT * FROM cat_servicos ORDER BY id asc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
@@ -43,11 +41,11 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){ 
 ?>
-        </p>
-      </div>
-      <div class="row" style="background: #f0f0f2">
+            </p>
+        </div>
+        <div class="row" style="background: #f0f0f2">
 
-<?php 
+            <?php 
 for($i=0; $i < $total_reg; $i++){
   foreach ($res[$i] as $key => $value){}
  
@@ -60,44 +58,44 @@ for($i=0; $i < $total_reg; $i++){
 
  ?>
 
-        <div class="col-sm-6 col-md-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="sistema/painel/img/servicos/<?php echo $foto ?>" title="<?php echo $nome ?>">
+            <div class="col-sm-6 col-md-3">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="sistema/painel/img/servicos/<?php echo $foto ?>" title="<?php echo $nome ?>">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            <?php echo $nomeF ?>
+                        </h5>
+                        <h6 class="price">
+                            <span class="new_price">
+                                R$ <?php echo $valorF ?>
+                            </span>
+
+                        </h6>
+                        <a href="agendamentos">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="detail-box">
-              <h5>
-               <?php echo $nomeF ?>
-              </h5>
-              <h6 class="price">
-                <span class="new_price">
-                 R$ <?php echo $valorF ?>
-                </span>
-               
-              </h6>
-              <a href="agendamentos">
-                  Agendar
-                </a>
-            </div>
-          </div>
+
+            <?php } ?>
+
+
         </div>
-      
-   <?php } ?>    
 
+        <?php } ?>
 
-      </div>
-
-      <?php } ?>
-      
     </div>
-  </section>
+</section>
 
 
 
-  <!-- product section ends -->
+<!-- product section ends -->
 
 
 
 
- 
-   <?php require_once("rodape.php") ?>
+
+<?php require_once("rodape.php") ?>

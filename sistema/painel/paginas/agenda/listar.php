@@ -168,7 +168,7 @@ echo <<<HTML
         		<div class="col-md-3">
         			 <li class="dropdown head-dpdn2" style="list-style-type: none;">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		<img class="icon-rounded-vermelho" src="img/{$imagem}" width="45px" height="45px">
+		 <!--<img class="icon-rounded-vermelho" src="img/{$imagem}" width="45px" height="45px">-->
 				</a>
 
 		<ul class="dropdown-menu" style="margin-left:-30px;">
@@ -184,21 +184,22 @@ echo <<<HTML
 		</li>										
 		</ul>
 		</li>
+        	</div>
+        		<div class="display: flex; ">
+        			<h5>
+					<strong>{$horaF}</strong>
+					 <p>{$nome_cliente}<i><span style="color: #000; font-size:12px"> <br>Serviço: {$nome_serv}</span></i> {$qtditempendente} </p>
+        			 
+					 <a href="#" onclick="fecharServico('{$id}', '{$cliente}', '{$servico}', '{$valor_serv}', '{$funcionario}', '{$nome_serv}')" title="Finalizar Serviço" class="{$classe_status}"> <img class="icon-rounded-vermelho" src="img/check-square.png" width="15px" height="15px"></a>
+        			 <a href="http://api.whatsapp.com/send?1=pt_BR&phone=+55$telefone_cliene&text=Ola, gostaria de confirmar seu agendamento dia $dataF as $horaF" title="Lembrete Whats" class="{$classe_status}"> <i style="width: 15px; height: 15px; color: #25d366;" class="fa fa-whatsapp"></i></a>
+					</h5>  			
         		</div>
-        		<div class="col-md-9">
-        			<h5><strong>{$horaF}</strong>
-							<p>{$nome_cliente}(<i><span style="color:#061f9c; font-size:12px">{$nome_serv}</span></i>) {$qtditempendente} </p>
-        			 <a href="#" onclick="fecharServico('{$id}', '{$cliente}', '{$servico}', '{$valor_serv}', '{$funcionario}', '{$nome_serv}')" title="Finalizar Serviço" class="{$classe_status}"> <img class="icon-rounded-vermelho" src="img/check-square.png" width="15px" height="15px"></a>
-
-        			 <a href="http://api.whatsapp.com/send?1=pt_BR&phone=+55$telefone_cliene&text=Ola, gostariade de confirma seu agendamento dia $dataF as $horaF" title="Lembrete Whats" class="{$classe_status}"> <img class="icon-rounded-vermelho" src="img/icone-whats.png" width="15px" height="15px"></a> </h5>  			
-        		</div>
-        		</div>
-        		
-        					
+        	</div>
+						
         		<hr style="margin-top:-2px; margin-bottom: 3px">                    
                     <div class="stats esc" align="center">
                       <span style="">                      
-                        <small> <span class="{$ocultar_cartoes}" style=""><img class="icon-rounded-vermelho" src="img/presente.jpg" width="20px" height="20px"></span> <span style="color:{$classe_deb}; font-size:13px">{$nome_cliente}</span> (<i><span style="color:#061f9c; font-size:12px">{$nome_serv}</span></i>) {$qtditempendente}</small></span>
+                        <small> <span class="{$ocultar_cartoes}" style=""><img class="icon-rounded-vermelho" src="img/person.png" width="20px" height="20px"></span> <span style="color:{$classe_deb}; font-size:13px">Cliente: {$nome_cliente} </small></span>
                     </div>
                 </div>
         	</div>
@@ -212,23 +213,22 @@ HTML;
 ?>
 
 <script type="text/javascript">
-	function fecharServico(id, cliente, servico, valor_servico, funcionario, nome_serv){
+function fecharServico(id, cliente, servico, valor_servico, funcionario, nome_serv) {
 
-		$('#id_agd').val(id);
-		$('#cliente_agd').val(cliente);		
-		$('#servico_agd').val(servico);	
-		$('#valor_serv_agd').val(valor_servico);	
-		$('#funcionario_agd').val(funcionario).change();	
-		$('#titulo_servico').text(nome_serv);	
-		$('#descricao_serv_agd').val(nome_serv);
-		$('#obs2').val('');
+    $('#id_agd').val(id);
+    $('#cliente_agd').val(cliente);
+    $('#servico_agd').val(servico);
+    $('#valor_serv_agd').val(valor_servico);
+    $('#funcionario_agd').val(funcionario).change();
+    $('#titulo_servico').text(nome_serv);
+    $('#descricao_serv_agd').val(nome_serv);
+    $('#obs2').val('');
 
-		$('#valor_serv_agd_restante').val('');
-		$('#data_pgto_restante').val('');
-		$('#pgto_restante').val('').change();	
+    $('#valor_serv_agd_restante').val('');
+    $('#data_pgto_restante').val('');
+    $('#pgto_restante').val('').change();
 
 
-		$('#modalServico').modal('show');
-	}
+    $('#modalServico').modal('show');
+}
 </script>
-

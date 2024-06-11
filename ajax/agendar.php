@@ -19,12 +19,31 @@ $hora_atual = date('H:i');
 $hora_futura = date('H:i', strtotime($hora_atual . ' + 60 minutes'));
 
 if($data_agd >= $data_futura){
-	echo '❌ Agendamento invalido, Não é permitido agendamentos acima de '.$agendamento_dias.' dias.';
+	$hora_do_agd = 0;
+	$hora = 0;
+	echo '❌ Agendamento Inválido, Não é permitido agendamentos acima de '.$agendamento_dias.' dias.';
 	exit();
 }
 
 if ($data_atual==$data_agd && $hora_do_agd <= $hora_futura) {
-	echo '❌ Agendamento invalido, Não é permitido agendamentos de ultima hora';
+	$hora_do_agd = 0;
+	$hora = 0;
+	echo '❌ Agendamento Inválido, Não é permitido agendamentos de ultima hora.';
+	exit();
+}
+
+function validarTelefone($telefone) {
+    $regexTelefone = '/^\(\d{2}\) \d{5}-\d{4}$/';
+    return preg_match($regexTelefone, $telefone);
+}
+
+if (!validarTelefone($telefone)) {
+	echo '❌ Agendamento Inválido, Telegone Inválido!';
+	exit();
+}
+
+if(strlen($nome) < 3){
+	echo "❌ Nome deve conter pelo menos três letras.";
 	exit();
 }
 
@@ -32,6 +51,7 @@ if($telefone == $whatsapp_sistema){
 	echo 'Insira seu Telefone!';
 	exit();
 }
+
 
 $tel_cli = $_POST['telefone'];
 
@@ -58,7 +78,7 @@ $dia_procurado = $diasemana[$diasemana_numero];
 $query = $pdo->query("SELECT * FROM dias where funcionario = '$funcionario' and dia = '$dia_procurado'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 if(@count($res) == 0){
-		echo '❌ Este Funcionário não trabalha neste Dia!';
+	echo '❌ Este Funcionário não trabalha neste Dia!';
 	exit();
 }else{
 	$inicio = $res[0]['inicio'];
@@ -173,13 +193,14 @@ $dataF = implode('/', array_reverse(explode('-', $data)));
 $horaF = date("H:i", strtotime($hora));
 
 
-$mensagem = '✅ *_Novo Agendamento_ '.$nome_sistema.'* %0A';
-$mensagem .= 'WhatsApp Salão: *'.$whatsapp_sistema.'* %0A';
-$mensagem .= 'Profissional: *'.$nome_func.'* %0A';
-$mensagem .= 'Serviço: *'.$nome_serv.'* %0A';
-$mensagem .= 'Data: *'.$dataF.'* %0A';
-$mensagem .= 'Hora: *'.$horaF.'* %0A';
-$mensagem .= 'Cliente: *'.$nome.'* %0A';
+$mensagem = '✅ *_Novo Agendamento_ '.$nome_sistema.'* \n';
+$mensagem .= 'WhatsApp Salão: *'.$whatsapp_sistema.'* \n';
+$mensagem .= 'Profissional: *'.$nome_func.'* \n';
+$mensagem .= 'Serviço: *'.$nome_serv.'* \n';
+$mensagem .= 'Data: *'.$dataF.'* \n';
+$mensagem .= 'Hora: *'.$horaF.'* \n';
+$mensagem .= 'Cliente: *'.$nome.'* \n';
+
 
 if($obs != ""){
 	$mensagem .= 'Obs: *'.$obs.'* %0A';

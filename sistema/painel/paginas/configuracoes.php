@@ -1,6 +1,6 @@
 <?php 
-require_once("verificar.php");
-require_once("../conexao.php");
+require("verificar.php");
+require("../conexao.php");
 $pag = 'configuracoes';
 $data_atual = date('Y-m-d');
 
@@ -149,7 +149,7 @@ if(@$configuracoes == 'ocultar'){
 								<select class="form-control" name="msg_agendamento" id="msg_agendamento">
 									<option value="Sim" <?php if($msg_agendamento == 'Sim'){?> selected <?php } ?> >Sim</option>
 									<option value="Não" <?php if($msg_agendamento == 'Não'){?> selected <?php } ?> >Não</option>
-									<option value="Api" <?php if($msg_agendamento == 'Api'){?> selected <?php } ?> >Api Paga</option>
+									<option value="Api" <?php if($msg_agendamento == 'Api'){?> selected <?php } ?> >API Mensagens</option>
 								</select>      
 							</div> 
 						</div>

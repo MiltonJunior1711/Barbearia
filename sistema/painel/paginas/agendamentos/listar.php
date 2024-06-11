@@ -174,7 +174,7 @@ echo <<<HTML
 
 				<li class="dropdown head-dpdn2" style="list-style-type: none;">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		<img class="icon-rounded-vermelho" src="img/{$imagem}" width="45px" height="45px">
+		<!--<img class="icon-rounded-vermelho" src="img/{$imagem}" width="45px" height="45px">-->
 				</a>
 
 		<ul class="dropdown-menu" style="margin-left:-30px;">
@@ -191,16 +191,17 @@ echo <<<HTML
 		</ul>
 		</li>
         			 
+		</div>
+				<div class="display: flex; ">
+        			<h5>
+					<strong>{$horaF}</strong>
+					 <p>{$nome_cliente}<i><span style="color: #000; font-size:12px"> <br>Serviço: {$nome_serv}</span></i> {$qtditempendente} </p>
+        			 
+					 <a href="#" onclick="fecharServico('{$id}', '{$cliente}', '{$servico}', '{$valor_serv}', '{$funcionario}', '{$nome_serv}')" title="Finalizar Serviço" class="{$classe_status}"> <img class="icon-rounded-vermelho" src="img/check-square.png" width="15px" height="15px"></a>
+        			 <a href="http://api.whatsapp.com/send?1=pt_BR&phone=+55$telefone_cliene&text=Ola, gostaria de confirmar seu agendamento dia $dataF as $horaF" title="Lembrete Whats" class="{$classe_status}"> <i style="width: 15px; height: 15px; color: #25d366;" class="fa fa-whatsapp"></i></a>
+					</h5>  			
         		</div>
-        		<div class="col-md-9">
-        			<h5><strong>{$horaF}</strong>
-							<p>{$nome_cliente}(<i><span style="color:#061f9c; font-size:12px">{$nome_serv}</span></i>) {$qtditempendente} </p>
-        			 <a href="#" onclick="fecharServico('{$id}', '{$cliente}', '{$servico}', '{$valor_serv}', '{$funcionario}', '{$nome_serv}')" title="Finalizar Serviço" class="{$classe_status}"> <img class="icon-rounded-vermelho" src="img/check-square.png" width="15px" height="15px"></a>
-
-        			 <a href="http://api.whatsapp.com/send?1=pt_BR&phone=+55$telefone_cliene&text=Ola, gostaria de confirma seu agendamento dia $dataF as $horaF" title="Lembrete Whats" class="{$classe_status}"> <img class="icon-rounded-vermelho" src="img/icone-whats.png" width="15px" height="15px"></a> </h5> 
-
-        		</div>
-        		</div>
+        	</div>
         		
         					
         		<hr style="margin-top:-2px; margin-bottom: 3px">                    
@@ -218,6 +219,8 @@ HTML;
 }
 
 ?>
+
+
 
 
 

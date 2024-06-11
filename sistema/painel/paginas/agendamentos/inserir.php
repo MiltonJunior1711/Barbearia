@@ -177,6 +177,7 @@ if(strtotime($hora_atual) < strtotime($nova_hora) or strtotime($data_atual) != s
 				//$pdo->query("UPDATE agendamentos SET hash = '$id_hash' WHERE id = '$ult_id'");	
 			}
 		}
+		
 	}
 }
 

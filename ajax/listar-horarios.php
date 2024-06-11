@@ -28,6 +28,9 @@ $query = $pdo->query("SELECT * FROM dias where funcionario = '$funcionario' and 
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 if(@count($res) == 0){
 		echo 'Este Funcionário não trabalha neste Dia!';
+		echo '<script type="text/javascript">
+            shakeForm();
+          </script>';
 	exit();
 }else{
 
@@ -129,8 +132,26 @@ $inicio = date('H:i:s', $hora_minutos);
 	
 	if($i == 0){
 		echo '<div align="center"> <small>Não temos mais horários disponíveis com este funcionário para essa data!</small></div>';
+		echo '<script type="text/javascript">
+            shakeForm();
+          </script>';
 	}
 	?>
 
 
 </div>
+
+
+<script type="text/javascript">
+
+function shakeForm() {
+	var form = document.getElementById('form-agenda');
+  // Adiciona a classe de tremor ao formulário
+  	form.classList.add('shake');
+  
+  // Remove a classe após a animação
+	form.addEventListener('animationend', function() {
+    form.classList.remove('shake');
+  }, { once: true });
+}
+</script>

@@ -21,6 +21,7 @@ if(@$hora == ""){
 	exit();
 }
 
+
 $query = $pdo->query("SELECT * FROM usuarios where id = '$funcionario'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $intervalo = $res[0]['intervalo'];
@@ -114,6 +115,9 @@ if($total_reg > 0 and $res[0]['id'] != $id){
 }
 
 
+
+
+
 echo 'Salvo com Sucesso'; 
 
 
@@ -145,13 +149,14 @@ $telefone = '55'.preg_replace('/[ ()-]+/' , '' , $telefone);
 
 }
 
-$query = $pdo->prepare("INSERT INTO $tabela SET funcionario = '$funcionario', cliente = '$cliente', hora = '$hora', data = '$data_agd', usuario = '$usuario_logado', status = 'Agendado', obs = :obs, data_lanc = curDate(), servico = '$servico', hash = '$hash'");
 
+$query = $pdo->prepare("INSERT INTO $tabela SET funcionario = '$funcionario', cliente = '$cliente', hora = '$hora', data = '$data_agd', usuario = '$usuario_logado', status = 'Agendado', obs = :obs, data_lanc = curDate(), servico = '$servico', hash = '$hash'");
 
 $query->bindValue(":obs", "$obs");
 $query->execute();
 
 $ult_id = $pdo->lastInsertId();
+
 
 if($msg_agendamento == 'Api'){
 if(strtotime($hora_atual) < strtotime($nova_hora) or strtotime($data_atual) != strtotime($data_agd)){

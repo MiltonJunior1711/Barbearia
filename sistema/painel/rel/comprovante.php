@@ -116,8 +116,6 @@ $endereco_cliente = @$res2[0]['endereco'];
 		padding-top:5px;
 	}
 	
-	
-}
 </style>
 
 

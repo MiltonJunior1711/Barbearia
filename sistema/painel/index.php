@@ -1,7 +1,10 @@
 <?php 
 @session_start();
 require_once("verificar.php");
-require_once("../conexao.php");
+require("../conexao.php");
+
+$css_file = "css/style.css";
+$css_version = filemtime($css_file);
 
 $pag_inicial = 'home';
 
@@ -63,7 +66,7 @@ $dataMesInicial = $partesInicial[1];
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 	<!-- Custom CSS -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="<?php echo $css_file ?>?v=<?php echo $css_version ?>">
 
 	<!-- font-awesome icons CSS -->
 	<link href="css/font-awesome.css" rel="stylesheet"> 
@@ -205,11 +208,11 @@ $dataMesInicial = $partesInicial[1];
 
 									<li class="<?php echo @$cat_servicos ?>"><a href="index.php?pag=cat_servicos"><i class="fa fa-angle-right"></i>Categoria Serviços</a></li>
 
-									<li class="<?php echo @$grupos ?>"><a href="index.php?pag=grupos"><i class="fa fa-angle-right"></i>Grupo Acessos</a></li>
+									<!-- <li class="<?php echo @$grupos ?>"><a href="index.php?pag=grupos"><i class="fa fa-angle-right"></i>Grupo Acessos</a></li> -->
 
-									<li class="<?php echo @$acessos ?>"><a href="index.php?pag=acessos"><i class="fa fa-angle-right"></i>Acessos</a></li>
+									<!-- <li class="<?php echo @$acessos ?>"><a href="index.php?pag=acessos"><i class="fa fa-angle-right"></i>Acessos</a></li> -->
 
-										<li class="<?php echo @$pgto ?>"><a href="index.php?pag=pgto"><i class="fa fa-angle-right"></i>Formas de Pagamento</a></li>
+									<li class="<?php echo @$pgto ?>"><a href="index.php?pag=pgto"><i class="fa fa-angle-right"></i>Formas de Pagamento</a></li>
 								
 								</ul>
 							</li>
@@ -225,7 +228,7 @@ $dataMesInicial = $partesInicial[1];
 
 									<li class="<?php echo @$produtos ?>"><a href="index.php?pag=produtos"><i class="fa fa-angle-right"></i>Produtos</a></li>
 
-									<li class="<?php echo @$cat_produtos ?>"><a href="index.php?pag=cat_produtos"><i class="fa fa-angle-right"></i>Categorias</a></li>
+									<!-- <li class="<?php echo @$cat_produtos ?>"><a href="index.php?pag=cat_produtos"><i class="fa fa-angle-right"></i>Categorias</a></li> -->
 									
 									<li class="<?php echo @$estoque ?>"><a href="index.php?pag=estoque"><i class="fa fa-angle-right"></i>Estoque Baixo</a></li>
 
@@ -288,7 +291,7 @@ $dataMesInicial = $partesInicial[1];
 								</a>
 								<ul class="treeview-menu">
 
-									<li class="<?php echo @$rel_produtos ?>"><a href="rel/rel_produtos_class.php" target="_blank"><i class="fa fa-angle-right"></i>Relatório de Produtos</a></li>
+									<!-- <li class="<?php echo @$rel_produtos ?>"><a href="rel/rel_produtos_class.php" target="_blank"><i class="fa fa-angle-right"></i>Relatório de Produtos</a></li> -->
 
 									<li class="<?php echo @$rel_entradas ?>"><a href="#" data-toggle="modal" data-target="#RelEntradas"><i class="fa fa-angle-right"></i>Entradas / Ganhos</a></li>
 

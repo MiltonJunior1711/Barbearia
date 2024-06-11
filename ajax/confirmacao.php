@@ -28,45 +28,15 @@ curl_setopt_array($curl, array(
   ),
 ));
 
-//$response = curl_exec($curl);
-
-//curl_close($curl);
-//pegando o id
-//$response = json_decode($response, false);
-//$id = $response->id;
-
 $response = curl_exec($curl);
 
+// Fecha a sessão cURL
 curl_close($curl);
 
-if ($response === false) {
-    // Verifique se houve algum erro na execução da requisição cURL
-    $error_message = curl_error($curl);
-    error_log("Erro cURL: $error_message");
-} else {
-    // Tentar decodificar a resposta JSON
-    // Extrair o JSON válido da resposta usando uma expressão regular
-    if (preg_match('/\{.*\}/', $response, $matches)) {
-        $json_response = $matches[0]; // O primeiro elemento de $matches contém o JSON válido
-        // Decodificar o JSON
-        $response_decoded = json_decode($json_response);
-        
-        if ($response_decoded === null) {
-            // Verifique se houve um erro ao decodificar o JSON
-            error_log("Erro ao decodificar JSON: " . json_last_error_msg());
-        } else {
-            // Verifique se a propriedade "id" está definida na resposta
-            if (property_exists($response_decoded, 'id')) {
-                // Acesso seguro à propriedade "id"
-                $id = $response_decoded->id;
-            } else {
-                // A propriedade "id" não está definida na resposta
-                error_log("Propriedade 'id' não encontrada na resposta JSON");
-            }
-        }
-    } else {
-        // Caso não seja encontrado nenhum JSON válido na resposta
-        error_log("Nenhum JSON válido encontrado na resposta");
-    }
+// Decodifica a resposta JSON para obter o ID
+$response = json_decode($response, false);
+if (isset($response->id)) {
+  $id = $response->id;
+  // Você pode usar o ID conforme necessário, mas não retorna ou ecoa nada
 }
 ?>

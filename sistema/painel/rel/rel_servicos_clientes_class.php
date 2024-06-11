@@ -27,18 +27,26 @@ $pdf = new DOMPDF($options);
 
 
 
-//Definir o tamanho do papel e orientação da página
-$pdf->set_paper('A4', 'portrait');
-
 //CARREGAR O CONTEÚDO HTML
-$pdf->load_html($html);
+$pdf->loadHtml($html);
+
+//Definir o tamanho do papel e orientação da página
+$pdf->setPaper('A4', 'portrait');
 
 //RENDERIZAR O PDF
 $pdf->render();
 
-//NOMEAR O PDF GERADO
-$pdf->stream(
-'servicosClientes.pdf',
-array("Attachment" => false)
-);
+// Obter o conteúdo do PDF
+$pdf_content = $pdf->output();
+
+// Limpar qualquer saída que possa ter sido feita anteriormente
+ob_clean();
+
+// Configurar os cabeçalhos para forçar o download
+header('Content-Type: application/pdf');
+header('Content-Disposition: attachment; filename="Serviços-Clientes.pdf"');
+
+// Enviar o conteúdo do PDF para o navegador
+echo $pdf_content;
+exit();
 ?>

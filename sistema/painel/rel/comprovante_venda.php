@@ -117,7 +117,6 @@ $endereco_cliente = @$res2[0]['endereco'];
 	}
 	
 	
-}
 </style>
 
 

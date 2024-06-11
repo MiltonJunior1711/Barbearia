@@ -131,9 +131,7 @@ echo <<<HTML
 
 		<big><a href="http://api.whatsapp.com/send?1=pt_BR&phone=$whats&text=" target="_blank" title="Abrir Whatsapp"><i class="fa fa-whatsapp verde"></i></a></big>
 
-
-
-		<big><a class="" href="#" onclick="contrato('{$id}','{$nome}')" title="Contrato de Serviço"><i class="fa fa-file-pdf-o text-primary"></i></a></big>
+		<!-- <big><a class="" href="#" onclick="contrato('{$id}','{$nome}')" title="Contrato de Serviço"><i class="fa fa-file-pdf-o text-primary"></i></a></big> -->
 
 		<big><a class="" href="rel/rel_servicos_clientes_class.php?id={$id}" target="_blank" title="Últimos Serviços"><i class="fa fa-file-pdf-o text-danger"></i></a></big>
 
