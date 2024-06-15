@@ -180,7 +180,7 @@ echo <<<HTML
 		</li>
 
 
-		<big><a class="{$japago}" href="#" onclick="gerarComprovante('{$id}')" title="Gerar Comprovante"><i class="fa fa-file-pdf-o text-primary"></i></a></big>
+		<!--<big><a class="{$japago}" href="#" onclick="gerarComprovante('{$id}')" title="Gerar Comprovante"><i class="fa fa-file-pdf-o text-primary"></i></a></big>-->
 
 		
 	
@@ -213,97 +213,98 @@ HTML;
 ?>
 
 <script type="text/javascript">
-	$(document).ready( function () {
+$(document).ready(function() {
     $('#tabela').DataTable({
-    		"ordering": false,
-			"stateSave": true
-    	});
+        "ordering": false,
+        "stateSave": true
+    });
     $('#tabela_filter label input').focus();
-} );
+});
 </script>
 
 
 <script type="text/javascript">
-	function editar(id, produto, pessoa, valor, data_venc, data_pgto, foto){
-		$('#id').val(id);
-		$('#produto').val(produto).change();
-		$('#pessoa').val(pessoa).change();
-		$('#valor').val(valor);
-		$('#data_venc').val(data_venc);
-		$('#data_pgto').val(data_pgto);
-								
-		$('#titulo_inserir').text('Editar Registro');
-		$('#modalForm').modal('show');
+function editar(id, produto, pessoa, valor, data_venc, data_pgto, foto) {
+    $('#id').val(id);
+    $('#produto').val(produto).change();
+    $('#pessoa').val(pessoa).change();
+    $('#valor').val(valor);
+    $('#data_venc').val(data_venc);
+    $('#data_pgto').val(data_pgto);
 
-		$('#target').attr('src','img/contas/' + foto);
-	}
+    $('#titulo_inserir').text('Editar Registro');
+    $('#modalForm').modal('show');
 
-	function limparCampos(){
-		$('#id').val('');		
-		$('#valor_serv').val('');
-		$('#data_pgto').val('<?=$data_hoje?>');	
+    $('#target').attr('src', 'img/contas/' + foto);
+}
+
+function limparCampos() {
+    $('#id').val('');
+    $('#valor_serv').val('');
+    $('#data_pgto').val('<?=$data_hoje?>');
 
 
-		$('#valor_serv_agd_restante').val('');
-		$('#data_pgto_restante').val('');
-		$('#pgto_restante').val('').change();	
+    $('#valor_serv_agd_restante').val('');
+    $('#data_pgto_restante').val('');
+    $('#pgto_restante').val('').change();
 
-		
-	}
+
+}
 </script>
 
 <script type="text/javascript">
-	function mostrar(descricao, valor, data_lanc, data_venc, data_pgto, usuario_lanc, usuario_pgto, foto, pessoa, link, telefone, obs){
+function mostrar(descricao, valor, data_lanc, data_venc, data_pgto, usuario_lanc, usuario_pgto, foto, pessoa, link,
+    telefone, obs) {
 
-		$('#nome_dados').text(descricao);
-		$('#valor_dados').text(valor);
-		$('#data_lanc_dados').text(data_lanc);
-		$('#data_venc_dados').text(data_venc);
-		$('#data_pgto_dados').text(data_pgto);
-		$('#usuario_lanc_dados').text(usuario_lanc);
-		$('#usuario_baixa_dados').text(usuario_pgto);
-		$('#pessoa_dados').text(pessoa);
-		$('#telefone_dados').text(telefone);
+    $('#nome_dados').text(descricao);
+    $('#valor_dados').text(valor);
+    $('#data_lanc_dados').text(data_lanc);
+    $('#data_venc_dados').text(data_venc);
+    $('#data_pgto_dados').text(data_pgto);
+    $('#usuario_lanc_dados').text(usuario_lanc);
+    $('#usuario_baixa_dados').text(usuario_pgto);
+    $('#pessoa_dados').text(pessoa);
+    $('#telefone_dados').text(telefone);
 
-		$('#obs_dados').text(obs);
-		
-		
-		$('#modalDados').modal('show');
-	}
+    $('#obs_dados').text(obs);
+
+
+    $('#modalDados').modal('show');
+}
 </script>
 
 
 
 
 <script type="text/javascript">
-	function saida(id, nome, estoque){
+function saida(id, nome, estoque) {
 
-		$('#nome_saida').text(nome);
-		$('#estoque_saida').val(estoque);
-		$('#id_saida').val(id);		
+    $('#nome_saida').text(nome);
+    $('#estoque_saida').val(estoque);
+    $('#id_saida').val(id);
 
-		$('#modalSaida').modal('show');
-	}
-</script>
-
-
-<script type="text/javascript">
-	function entrada(id, nome, estoque){
-
-		$('#nome_entrada').text(nome);
-		$('#estoque_entrada').val(estoque);
-		$('#id_entrada').val(id);		
-
-		$('#modalEntrada').modal('show');
-	}
+    $('#modalSaida').modal('show');
+}
 </script>
 
 
 <script type="text/javascript">
-	function gerarComprovante(id){
-		let a= document.createElement('a');
-		                a.target= '_blank';
-		                a.href= 'rel/comprovante.php?id='+ id;
-		                a.click();
-	}
+function entrada(id, nome, estoque) {
+
+    $('#nome_entrada').text(nome);
+    $('#estoque_entrada').val(estoque);
+    $('#id_entrada').val(id);
+
+    $('#modalEntrada').modal('show');
+}
+</script>
+
+
+<script type="text/javascript">
+function gerarComprovante(id) {
+    let a = document.createElement('a');
+    a.target = '_blank';
+    a.href = 'rel/comprovante.php?id=' + id;
+    a.click();
+}
 </script>

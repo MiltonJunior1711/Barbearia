@@ -2,7 +2,7 @@
 require_once("../../../conexao.php");
 $tabela = 'usuarios';
 
-$query = $pdo->query("SELECT * FROM $tabela ORDER BY id desc");
+$query = $pdo->query("SELECT * FROM $tabela where nivel != 'Administrador' ORDER BY id desc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){
@@ -71,7 +71,7 @@ echo <<<HTML
 <td class="esc">{$nivel}</td>
 <td class="esc">{$dataF}</td>
 <td>
-		<big><a href="#" onclick="editar('{$id}','{$nome}', '{$email}', '{$telefone}', '{$cpf}', '{$nivel}', '{$endereco}', '{$foto}', '{$atendimento}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
+		<!--<big><a href="#" onclick="editar('{$id}','{$nome}', '{$email}', '{$telefone}', '{$cpf}', '{$nivel}', '{$endereco}', '{$foto}', '{$atendimento}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big> -->
 
 		<big><a href="#" onclick="mostrar('{$nome}', '{$email}', '{$cpf}', '{$senhaF}', '{$nivel}', '{$dataF}', '{$ativo}', '{$telefone}', '{$endereco}', '{$foto}', '{$atendimento}')" title="Ver Dados"><i class="fa fa-info-circle text-secondary"></i></a></big>
 
@@ -117,74 +117,74 @@ HTML;
 ?>
 
 <script type="text/javascript">
-	$(document).ready( function () {
+$(document).ready(function() {
     $('#tabela').DataTable({
-    		"ordering": false,
-			"stateSave": true
-    	});
+        "ordering": false,
+        "stateSave": true
+    });
     $('#tabela_filter label input').focus();
-} );
+});
 </script>
 
 
 <script type="text/javascript">
-	function editar(id, nome, email, telefone, cpf, nivel, endereco, foto, atendimento){
-		$('#id').val(id);
-		$('#nome').val(nome);
-		$('#email').val(email);
-		$('#telefone').val(telefone);
-		$('#cpf').val(cpf);
-		$('#cargo').val(nivel).change();
-		$('#endereco').val(endereco);
-		$('#atendimento').val(atendimento).change();
+function editar(id, nome, email, telefone, cpf, nivel, endereco, foto, atendimento) {
+    $('#id').val(id);
+    $('#nome').val(nome);
+    $('#email').val(email);
+    $('#telefone').val(telefone);
+    $('#cpf').val(cpf);
+    $('#cargo').val(nivel).change();
+    $('#endereco').val(endereco);
+    $('#atendimento').val(atendimento).change();
 
-		
-		$('#titulo_inserir').text('Editar Registro');
-		$('#modalForm').modal('show');
-		$('#foto').val('');
-		$('#target').attr('src','img/perfil/' + foto);
-	}
 
-	function limparCampos(){
-		$('#id').val('');
-		$('#nome').val('');
-		$('#telefone').val('');
-		$('#email').val('');
-		$('#cpf').val('');
-		$('#endereco').val('');
-		$('#foto').val('');
-		$('#target').attr('src','img/perfil/sem-foto.jpg');
-	}
+    $('#titulo_inserir').text('Editar Registro');
+    $('#modalForm').modal('show');
+    $('#foto').val('');
+    $('#target').attr('src', 'img/perfil/' + foto);
+}
+
+function limparCampos() {
+    $('#id').val('');
+    $('#nome').val('');
+    $('#telefone').val('');
+    $('#email').val('');
+    $('#cpf').val('');
+    $('#endereco').val('');
+    $('#foto').val('');
+    $('#target').attr('src', 'img/perfil/sem-foto.jpg');
+}
 </script>
 
 
 
 <script type="text/javascript">
-	function mostrar(nome, email, cpf, senha, nivel, data, ativo, telefone, endereco, foto, atendimento){
+function mostrar(nome, email, cpf, senha, nivel, data, ativo, telefone, endereco, foto, atendimento) {
 
-		$('#nome_dados').text(nome);
-		$('#email_dados').text(email);
-		$('#cpf_dados').text(cpf);
-		$('#senha_dados').text(senha);
-		$('#nivel_dados').text(nivel);
-		$('#data_dados').text(data);
-		$('#ativo_dados').text(ativo);
-		$('#telefone_dados').text(telefone);
-		$('#endereco_dados').text(endereco);
-		$('#atendimento_dados').text(atendimento);
+    $('#nome_dados').text(nome);
+    $('#email_dados').text(email);
+    $('#cpf_dados').text(cpf);
+    $('#senha_dados').text(senha);
+    $('#nivel_dados').text(nivel);
+    $('#data_dados').text(data);
+    $('#ativo_dados').text(ativo);
+    $('#telefone_dados').text(telefone);
+    $('#endereco_dados').text(endereco);
+    $('#atendimento_dados').text(atendimento);
 
-		$('#target_mostrar').attr('src','img/perfil/' + foto);
+    $('#target_mostrar').attr('src', 'img/perfil/' + foto);
 
-		$('#modalDados').modal('show');
-	}
+    $('#modalDados').modal('show');
+}
 </script>
 
 <script type="text/javascript">
-	function permissoes(id, nome){		
-    $('#id-usuario').val(id);        
-    $('#nome-usuario').text(nome);   
+function permissoes(id, nome) {
+    $('#id-usuario').val(id);
+    $('#nome-usuario').text(nome);
     $('#modalPermissoes').modal('show');
-    $('#mensagem-permissao').text(''); 
+    $('#mensagem-permissao').text('');
     listarPermissoes(id);
 }
 </script>

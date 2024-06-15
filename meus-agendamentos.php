@@ -328,11 +328,6 @@ $obs = str_replace('"', "**", $obs);
     </div>
 </div>
 
-<script>
-var header = $('#main-header');
-header.css('background-color', '#0e3746', 'important');
-</script>
-
 <script type="text/javascript">
 function showOverlay() {
     $('#overlay').modal('show');
