@@ -30,7 +30,7 @@ require_once("cabecalho.php"); ?>
                         </a>
                         <a href="">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span>Instagram: (Link direto e @) <?php echo $instagram_sistema ?></span>
+                            <span>Instagram: <?php echo $instagram_sistema ?></span>
                         </a>
                     </div>
                 </div>

@@ -160,6 +160,7 @@ span.dashboard_text {
 }
 .header-right {
     float: right;
+    margin-left: 5%;
 }
 /* ----menu-icon----*/
 button#showLeftPush {
