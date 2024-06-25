@@ -4,7 +4,11 @@
     min-height: auto;
 }
 </style>
-
+<style>
+    #main-header {
+      background-color: transparent !important; /* Aplica !important diretamente no CSS */
+    }
+</style>
 
 <?php 
 $query = $pdo->query("SELECT * FROM produtos where estoque > 0 and valor_venda >  0 ORDER BY id desc");
@@ -73,8 +77,6 @@ for($i=0; $i < $total_reg; $i++){
 <?php } ?>
 
 <!-- product section ends -->
-
-
 
 
 

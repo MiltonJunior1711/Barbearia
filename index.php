@@ -1,5 +1,11 @@
 <?php require_once("cabecalho.php") ?>
 
+<style>
+    #main-header {
+      background-color: transparent !important; /* Aplica !important diretamente no CSS */
+    }
+</style>
+
 <?php 
 $query = $pdo->query("SELECT * FROM textos_index ORDER BY id asc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -58,11 +64,11 @@ for($i=0; $i < $total_reg; $i++){
         <div class="container">
             <div class="carousel_btn-box">
                 <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <i class="fa fa-arrow-left icon" aria-hidden="true"></i>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    <i class="fa fa-arrow-right icon" aria-hidden="true"></i>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
@@ -508,9 +514,6 @@ if($total_reg > 0){
         </div>
     </div>
 </div>
-
-
-
 
 <script type="text/javascript">
 $(document).ready(function() {

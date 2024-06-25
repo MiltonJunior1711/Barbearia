@@ -5,9 +5,11 @@
 }
 </style>
 
-
-
-
+<style>
+    #main-header {
+      background-color: transparent !important; /* Aplica !important diretamente no CSS */
+    }
+</style>
 
 <section class="product_section layout_padding" style=  "background: #f0f0f2;">
     <div class="container-fluid">

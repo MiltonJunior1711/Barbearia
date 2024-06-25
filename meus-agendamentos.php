@@ -21,6 +21,12 @@ if(!isset($id_cliente) || $id_cliente === null || $id_cliente === 0){
 }
 </style>
 
+<style>
+    #main-header {
+      background-color: transparent !important; /* Aplica !important diretamente no CSS */
+    }
+</style>
+
 <div class="footer_section" style="background: #4444459A; ">
     <div class="container">
         <div class="footer_content ">
@@ -117,14 +123,14 @@ $obs = str_replace('"', "**", $obs);
                 <div class="list-group-item list-group-item-action flex-column align-items-start "
                     style="margin-bottom: 10px">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"><small> <i class="fa fa-calendar" aria-hidden="true"></i> Data:
-                                <?php echo $dataF ?> <i class="fa fa-clock-o text-success" aria-hidden="true"
+                        <h5 class="mb-1"><small> <i class="fa fa-calendar icon" aria-hidden="true"></i> Data:
+                                <?php echo $dataF ?> <i class="fa fa-clock-o text-success icon" aria-hidden="true"
                                     style="margin-left: 10px"></i> Hora: <?php echo $horaF ?></small></h5>
                         <small><a href="#"
                                 onclick="buscarNome();excluir('<?php echo $id ?>', '<?php echo $nome_cliente ?>', '<?php echo $dataF ?>', '<?php echo $horaF ?>', '<?php echo $nome_serv ?>', '<?php echo $nome_func ?>')"><i
-                                    class="fa fa-trash-o text-danger" aria-hidden="true"></i> </a>
+                                    class="fa fa-trash-o text-danger icon" aria-hidden="true"></i> </a>
                             <a href="#" onclick="showOverlay()">
-                                <i class="fa fa-calendar text-danger" aria-hidden="true"></i>
+                                <i class="fa fa-calendar text-danger icon" aria-hidden="true"></i>
                             </a>
                         </small>
 

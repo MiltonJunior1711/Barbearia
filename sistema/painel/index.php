@@ -708,8 +708,6 @@ $dataMesInicial = $partesInicial[1];
             <div class="header-right">
 
 
-
-
                 <div class="profile_details">
                     <ul>
                         <li class="dropdown profile_details_drop">

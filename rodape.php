@@ -17,25 +17,25 @@ require_once("cabecalho.php"); ?>
                     <h4>Contatos</h4>
                     <div class="contact_nav footer-col">
                         <a href="">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <i class="fa fa-map-marker icon" aria-hidden="true"></i>
                             <span><?php echo $endereco_sistema; ?></span>
                         </a>
-                        <a href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $tel_whatsapp; ?>">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $tel_whatsapp; ?>" target="_blank">
+                            <i class="fa fa-phone icon" aria-hidden="true"></i>
                             <span>Whatsapp : <?php echo $whatsapp_sistema; ?></span>
                         </a>
-                        <a href="">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:<?php echo $email_sistema; ?>">
+                            <i class="fa fa-envelope icon" aria-hidden="true"></i>
                             <span>Email : <?php echo $email_sistema; ?></span>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/<?php echo $instagram_sistema; ?>" target="_blank">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span>Instagram: <?php echo $instagram_sistema ?></span>
+                            <span>Instagram : <?php echo $instagram_sistema ?></span>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3" id="installBanner">
                     <!-- <div class="footer_form footer-col">
                         <h4>CADASTRE-SE</h4>
                         <form id="form_cadastro">
@@ -48,16 +48,16 @@ require_once("cabecalho.php"); ?>
                             <div id="mensagem-rodape"></div>
                         </small>
                     </div>-->
-                    <div id="installBanner">
-                        <h4>Melhore sua experiência!</h4>
-                        <span>Adicione este site à sua tela inicial para acesso rápido e fácil sempre que
-                            precisar.
-                        </span>
-                        <br>
-                        <br>
-                        <button style="width: 100%;" id="installButton" class="botao-criar-atalho" disabled>Criar
-                            Atalho</button>
-                    </div>
+        
+                    <h4>Melhore sua experiência!</h4>
+                    <span>Adicione este site à sua tela inicial para acesso rápido e fácil sempre que
+                        precisar.
+                    </span>
+                    <br>
+                    <br>
+                    <button style="width: 100%;" id="installButton" class="botao-criar-atalho" disabled>Criar
+                        Atalho</button>
+                   
                 </div>
             </div>
         </div>

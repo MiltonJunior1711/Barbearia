@@ -69,7 +69,7 @@ $css_version = filemtime($css_file);
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
                     <img src="sistema/img/logo.png" width="80px" style="filter: invert(100%); margin-right: 3px">
-                    <a class="navbar-brand " href="index"> <?php echo $nome_sistema ?> </a>
+                    <!-- <a class="navbar-brand " href="index"> <?php echo $nome_sistema ?> </a> -->
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -95,18 +95,18 @@ $css_version = filemtime($css_file);
 
                             <li class="nav-item">
                                 <a title="Ir para o Sistema" class="nav-link" href="sistema" target="_blank"> <i
-                                        class="fa fa-user" aria-hidden="true"></i> </a>
+                                        class="fa fa-user icon" aria-hidden="true"></i> </a>
                             </li>
 
                             <li class="nav-item">
                                 <a title="Ir para o Whatsapp" class="nav-link"
                                     href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $tel_whatsapp ?>"
-                                    target="_blank"> <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
+                                    target="_blank"> <i class="fa fa-whatsapp icon" aria-hidden="true"></i> </a>
                             </li>
 
                             <li class="nav-item">
                                 <a title="Ver Instagram" class="nav-link" href="<?php echo $instagram_sistema ?>"
-                                    target="_blank"> <i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                                    target="_blank"> <i class="fa fa-instagram icon" aria-hidden="true"></i> </a>
                             </li>
 
                         </ul>

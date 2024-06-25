@@ -12,12 +12,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['nome'] = $nome;
 }
 ?>
+<style>
+    #main-header {
+      background-color: transparent !important; /* Aplica !important diretamente no CSS */
+    }
+</style>
 
 <style type="text/css">
 .sub_page .hero_area {
     min-height: auto;
 }
+
+.color-list-clock {
+	color: black}
 </style>
+
 
 <div class="footer_section" style="background: #4444459A; ">
     <div class="container">
@@ -204,7 +213,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </style>
 
 
-
 <script type="text/javascript">
 $(document).ready(function() {
     //document.getElementById("botao_editar").style.display = "none";		
@@ -384,7 +392,7 @@ $("#form-agenda").submit(function() {
             $('#mensagem').removeClass()
             if (mensagem.trim() == "Agendado com Sucesso") {
                 $('#mensagem').text(mensagem)
-                buscarNome()
+                buscarNome();
 
                 var nome = $('#nome').val();
                 var data = $('#data').val();
@@ -414,7 +422,7 @@ $("#form-agenda").submit(function() {
 
                 var msg_agendamento = "<?=$msg_agendamento?>";
 
-                if (msg_agendamento == 'Sim') {
+                /*if (msg_agendamento == 'Sim') {
 
                     let a = document.createElement('a');
                     a.target = '_blank';
@@ -426,7 +434,7 @@ $("#form-agenda").submit(function() {
                     a.click();
                     return;
 
-                }
+                }*/
 
 
             } else {
