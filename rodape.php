@@ -28,9 +28,9 @@ require_once("cabecalho.php"); ?>
                             <i class="fa fa-envelope icon" aria-hidden="true"></i>
                             <span>Email : <?php echo $email_sistema; ?></span>
                         </a>
-                        <a href="https://www.instagram.com/<?php echo $instagram_sistema; ?>" target="_blank">
+                        <a href="<?php echo $instagram_sistema; ?>" target="_blank">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span>Instagram : <?php echo $instagram_sistema ?></span>
+                            <span>Instagram : <?php echo $nome_sistema ?></span>
                         </a>
                     </div>
                 </div>
