@@ -1,0 +1,7 @@
+[13-Dec-2023 20:29:50 America/Sao_Paulo] PHP Warning:  Undefined array key "dataInicial" in /home2/hgsys308/studiolorrany.systemmain.com.br/sistema/painel/rel/rel_entradas_class.php on line 5
+[13-Dec-2023 20:29:50 America/Sao_Paulo] PHP Warning:  Undefined array key "dataFinal" in /home2/hgsys308/studiolorrany.systemmain.com.br/sistema/painel/rel/rel_entradas_class.php on line 6
+[13-Dec-2023 20:29:50 America/Sao_Paulo] PHP Warning:  Undefined array key "filtro" in /home2/hgsys308/studiolorrany.systemmain.com.br/sistema/painel/rel/rel_entradas_class.php on line 7
+[13-Dec-2023 20:30:36 America/Sao_Paulo] PHP Warning:  Undefined array key "dataInicial" in /home2/hgsys308/studiolorrany.systemmain.com.br/sistema/painel/rel/rel_servicos_class.php on line 5
+[13-Dec-2023 20:30:36 America/Sao_Paulo] PHP Warning:  Undefined array key "dataFinal" in /home2/hgsys308/studiolorrany.systemmain.com.br/sistema/painel/rel/rel_servicos_class.php on line 6
+[13-Dec-2023 20:30:36 America/Sao_Paulo] PHP Warning:  Undefined array key "pgto" in /home2/hgsys308/studiolorrany.systemmain.com.br/sistema/painel/rel/rel_servicos_class.php on line 7
+[13-Dec-2023 20:30:36 America/Sao_Paulo] PHP Warning:  Undefined array key "servico" in /home2/hgsys308/studiolorrany.systemmain.com.br/sistema/painel/rel/rel_servicos_class.php on line 8

@@ -1,4 +1,5 @@
 <?php require_once("cabecalho.php") ?>
+
 <style type="text/css">
 .sub_page .hero_area {
     min-height: auto;
@@ -9,7 +10,6 @@
       background-color: transparent !important; /* Aplica !important diretamente no CSS */
     }
 </style>
-
 <?php 
 $query = $pdo->query("SELECT * FROM produtos where estoque > 0 and valor_venda >  0 ORDER BY id desc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
